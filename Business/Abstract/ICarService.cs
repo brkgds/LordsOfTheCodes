@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.ResultManager;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,13 +10,13 @@ namespace Business.Abstract
     {
         // Result Management
         // n-layered
-        List<Car> GetAll();
-        List<Car> GetListByBrandId(int brandId);
-        List<Car> GetListByColorId(int colorId);
-        Car GetById(int id);
-        void Add(Car car);
-        void Remove(Car car);
-        void Update(Car car);
+        IDataResult<List<Car>> GetAll();
+        IDataResult<Car> GetById(int id);
+        IDataResult<List<Car>> GetListByBrandId(int brandid);
+        IDataResult<List<Car>> GetListByColorId(int colorid);
+        IResult Add(Car car);
+        IResult Remove(Car car);
+        IResult Update(Car car);
 
     }
 }

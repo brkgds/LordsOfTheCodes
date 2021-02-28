@@ -14,5 +14,9 @@ namespace Core.Utilities.ResultManager
         {
 
         }
+        public SuccessDataResult(string message) : base(message, true, default)
+        {
+
+        }
     }
 }
