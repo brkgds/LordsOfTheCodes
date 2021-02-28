@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac;
 using Core.Utilities.ResultManager;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -15,6 +17,8 @@ namespace Business.Concrete
         {
             _carRepository = carRepository;
         }
+
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
             _carRepository.Add(car);
